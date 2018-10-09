@@ -49,6 +49,7 @@ public class Slider2 {
         slider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
+   
                 textField.setText(""+slider.getValue());
             }
         });

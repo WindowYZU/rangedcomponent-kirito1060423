@@ -33,16 +33,16 @@ public class ProgressBar2 {
         progressBar.setMaximum(100);
         
         Thread t=new Thread(){
+            @Override
             public void run(){
                 int i=0;
                 while(true){
-                    //累加 i 的值，顯示在 progressBar，注意超過100要拉回來
-                    
-                    ////////////////////////////////////////////////
-                    try {
+                    progressBar.setValue(i);
+                    i=(i+1)%100;
+                    try{
                         Thread.sleep(100);
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(ProgressBar2.class.getName()).log(Level.SEVERE, null, ex);
+                    }catch(InterruptedException ex){
+                        Logger.getLogger(ProgressBar2.class.getName()).log(Level.SEVERE,null,ex);
                     }
                 }
             }
